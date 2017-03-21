@@ -24,6 +24,10 @@ export default Ember.Component.extend({
 
   addMessage(message) {
     this.get('messages').pushObject(message);
+
+    Ember.run.next(() => {
+      this.$('.messages').scrollTop(999999);
+    });
   },
 
   actions: {
