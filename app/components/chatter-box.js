@@ -32,11 +32,12 @@ export default Ember.Component.extend({
 
   actions: {
     send() {
-      console.log('sending');
       this.get('socket').emit('new-msg', {
         sender: 'Carl',
         content: this.get('newMessage')
       });
+
+      this.set('newMessage', '');
     }
   }
 });
