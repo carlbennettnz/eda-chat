@@ -1,10 +1,13 @@
-<ul>
+<ul class="messages">
   {{#each messages as |message|}}
-    <li>{{message.sender}} – {{message.content}}</li>
+    <li>
+      <div class="sender">{{message.sender}}</div>
+      <div class="content">{{message.content}}&#8203;</div>
+    </li>
   {{/each}}
 </ul>
 
 <form {{action 'send' on='submit'}}>
-  <input type="text" oninput={{action (mut newMessage) value='target.value'}}>
-  <input type="submit" value="Send">
+  {{input value=newMessage placeholder="Say something…"}}
+  <input type="submit" value="→">
 </form>

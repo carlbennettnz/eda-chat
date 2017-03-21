@@ -3,6 +3,8 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   io: Ember.inject.service('socket-io'),
 
+  classNames: [ 'chatter-box' ],
+
   socket: null,
   messages: [],
   newMessage: '',
